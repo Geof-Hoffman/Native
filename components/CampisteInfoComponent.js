@@ -17,7 +17,8 @@ function RenderCampsite({campsite}) {
     return <view />;
 }
 
-function CampisteInfo(props){
+function CampsiteInfo(props){
     return <RenderCampsite campsite= {props.campsite} />
 }
-export default CampisteInfo;
+
+export default CampsiteInfo;
