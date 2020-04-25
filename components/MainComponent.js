@@ -6,7 +6,7 @@ import About from './AboutComponent';
 import Contact from './ContactComponent';
 import { View, Platform } from 'react-native';
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
-
+//this is creating the navigation
 const DirectoryNavigator = createStackNavigator(
     {
         Directory: { screen: Directory },
@@ -14,6 +14,7 @@ const DirectoryNavigator = createStackNavigator(
 
     },
     {
+        //this is just for design of the navigation
         initialRouteName: 'Directory',
         navigationOptions: {
             headerStyle: {
@@ -78,7 +79,7 @@ const ContactNavigator = createStackNavigator(
         }
     }
 );
-
+//creates side menu
 const MainNavigator = createDrawerNavigator(
     {
         Home: { screen: HomeNavigator },

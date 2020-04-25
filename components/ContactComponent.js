@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import { Text, View } from 'react-native';
 import { Card } from 'react-native-elements';
 
@@ -31,5 +31,8 @@ class Contact extends Component{
         )
     }
 }
+
+
+
 
 export default Contact;
