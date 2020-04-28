@@ -8,6 +8,20 @@ import { View, Platform, StyleSheet, Text, ScrollView, Image, ScrollViewBase } f
 import { createStackNavigator, createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 import SafeAreaView from 'react-native-safe-area-view';
+import { connect } from 'react-redux';
+import { fetchCampsites, fetchComments, fetchPromotions, fetchPartners } from '../redux/ActionCreators';
+
+
+// actionCreators (used to dispatch actions) that have been 'thunked' to send asynchronys calls 
+//using fetch to the server tto bring back data.   Mapping these allows us to  access actionCraetors as props.
+
+const mapDispatchToProps = {
+    fetchCampsites,
+    fetchComments,
+    fetchPromotions,
+    fetchPartners
+};
+
  
 //this is creating the navigation
 const DirectoryNavigator = createStackNavigator (
@@ -128,6 +142,7 @@ const CustomDrawerContentComponent = props => (
 );
 
 //creates side menu
+
 const MainNavigator = createDrawerNavigator(
     {
         Home: { 
@@ -191,6 +206,14 @@ const MainNavigator = createDrawerNavigator(
 );
 
 class Main extends Component {
+ //accessing actionCreators as props
+    componentDidMount() {
+        this.props.fetchCampsites();
+        this.props.fetchComments();
+        this.props.fetchPromotions();
+        this.props.fetchPartners();
+    }
+
     render() {
         return (
             <View style={{
@@ -231,5 +254,5 @@ const styles = StyleSheet.create({
     }
 });
 
-
-export default Main;
+//null because we don't have a 'mapStateTo props arg'
+export default connect(null, mapDispatchToProps)(Main);
