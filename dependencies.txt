@@ -1,0 +1,10 @@
+yarn global add expo-cli@3.9.1
+# In your bash terminal, from inside the NucampFolder/4-React-Native
+expo init nucampsite --name NuCamp -t blank --yarn
+cd nucampsite
+yarn add react-native-elements@1.2.0 
+yarn add react-navigation@2.0.1
+yarn add redux@4.0.0
+yarn add react-redux@5.0.7
+yarn add redux-thunk@2.2.0
+yarn add redux-logger@3.0.6
